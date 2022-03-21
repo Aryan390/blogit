@@ -1,0 +1,104 @@
+@import '../../assets/styles/variables.scss';
+
+.addpost-page {
+  width: 100vw;
+  margin: 2.5rem 0;
+
+  .addpost-container {
+    margin: 0 auto;
+    width: 80%;
+
+    .addpost-card {
+      padding: 1rem;
+      background: rgb(201, 201, 201);
+
+      h1 {
+        text-align: center;
+      }
+
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 2px 10px 6px rgba(0, 0, 0, 0.315);
+
+      .addpost-details {
+        width: 100%;
+        margin: 1.5rem 0;
+        @include flexing(column, center, center);
+
+        .input-container {
+          width: 100%;
+          @include flexing(row, center, center);
+        }
+
+        .textarea {
+          width: 80%;
+          padding: 1rem;
+          border-radius: 5px;
+          height: 150px;
+          font-size: 16px;
+          resize: none;
+          border: none;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        .fileUpload {
+          background: $china-rose;
+          -webkit-border-radius: 15px;
+          -moz-border-radius: 15px;
+          border-radius: 15px;
+          color: #fff;
+          font-size: 1em;
+          font-weight: bold;
+          margin: 1.25rem auto; /*20px/16px 0*/
+          overflow: hidden;
+          padding: 0.875em; /*14px/16px*/
+          position: relative;
+          text-align: center;
+          width: 120px;
+          cursor: pointer;
+          transition: all 0.2s ease-in-out;
+        }
+        .fileUpload:hover,
+        .fileUpload:active,
+        .fileUpload:focus {
+          background: $violet-blue;
+          cursor: pointer;
+        }
+        .fileUpload input.upload {
+          position: absolute;
+          top: 0;
+          right: 0;
+          margin: 0;
+          padding: 0;
+          font-size: 20px;
+          cursor: pointer;
+          opacity: 0;
+          filter: alpha(opacity=0);
+          width: 148px;
+          height: 46px;
+          cursor: pointer;
+        }
+
+        input[type='file'] {
+          position: fixed;
+          right: 100%;
+          bottom: 100%;
+        }
+        .custom-file-upload {
+          border: 1px solid #ccc;
+          display: inline-block;
+          padding: 6px 12px;
+          cursor: pointer;
+        }
+
+        .addpost-btn {
+          width: 80%;
+          @include style($color: #fff, $background: $dark-orange);
+        }
+      }
+    }
+  }
+}

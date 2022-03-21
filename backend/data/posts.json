@@ -1,0 +1,32 @@
+[
+  {
+    "title": "The Shawshank Redemption",
+    "author": "leo",
+    "body": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque fugiat alias ipsam voluptates tenetur. Quisquam iure dicta sapiente doloremque ipsum.",
+    "user": "5c8a1f292f8fb814b56fa184"
+  },
+  {
+    "title": "The Godfather",
+    "author": "jonas",
+    "body": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque fugiat alias ipsam voluptates tenetur. Quisquam iure dicta sapiente doloremque ipsum.",
+    "user": "5c8a1d5b0190b214360dc057"
+  },
+  {
+    "title": "The Godfather II",
+    "author": "leo",
+    "body": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque fugiat alias ipsam voluptates tenetur. Quisquam iure dicta sapiente doloremque ipsum.",
+    "user": "5c8a1f292f8fb814b56fa184"
+  },
+  {
+    "title": "Brooklyn99",
+    "author": "Sophie",
+    "body": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque fugiat alias ipsam voluptates tenetur. Quisquam iure dicta sapiente doloremque ipsum.",
+    "user": "5c8a1e1a2f8fb814b56fa182"
+  },
+  {
+    "title": "The Dark Knight",
+    "author": "leo",
+    "body": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque fugiat alias ipsam voluptates tenetur. Quisquam iure dicta sapiente doloremque ipsum.",
+    "user": "5c8a1d5b0190b214360dc057"
+  }
+]

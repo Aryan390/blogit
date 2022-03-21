@@ -1,0 +1,83 @@
+@import '../../assets//styles/variables.scss';
+
+.profile-page {
+  width: 100%;
+  padding-top: 2rem;
+
+  .profilepage-container {
+    margin: 0 auto;
+    width: 80%;
+
+    .profilepage-card {
+      @include flexing(column, center, center);
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      background: rgb(197, 197, 197);
+      padding: 1rem;
+      margin: 1rem 0;
+
+      & > h2 {
+        margin: 1rem 0;
+      }
+
+      & p {
+        margin-top: 0.5rem;
+        font-size: 1.2rem;
+      }
+
+      .profilepage-image {
+        @include flexing(row, center, center);
+        margin: 1.2rem auto;
+        border: 1px solid black;
+        border-radius: 50%;
+
+        img {
+          border-radius: 50%;
+          object-fit: cover;
+          height: 250px;
+          width: 250px;
+        }
+      }
+
+      .profilepage-credentials {
+        width: 100%;
+        padding: 1rem;
+        @include flexing(column, flex-start, center);
+
+        .credential {
+          width: 100%;
+          margin: 0.5rem 0;
+          font-size: 1.2rem;
+
+          .credential-label {
+            font-size: 1.1rem;
+          }
+
+          input {
+            width: 100%;
+            font-size: 0.95rem;
+          }
+        }
+      }
+
+      .profilepage-buttons {
+        @include flexing(row, center, center);
+        margin: 1.2rem auto;
+        width: 100%;
+
+        .profile-btn {
+          background: $btn-blue;
+          color: $grey-white;
+        }
+
+        .special-btns {
+          & button:first-child {
+            margin-right: 0.5rem;
+          }
+          & button:last-child {
+            margin-left: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}

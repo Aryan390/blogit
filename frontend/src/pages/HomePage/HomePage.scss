@@ -1,0 +1,151 @@
+@import '../../assets/styles/variables.scss';
+
+.home-page {
+  @include flexing(column, center, center);
+  width: 100%;
+  background: $background-color;
+  // if you add the below piece of code, then the header will be moved to the bottom of the home page, so to fix this we need to add z-index with relative to header , I didn't know that we could use relative position this way, think later when you get time.
+  // margin-top: -50px;
+
+  h1 {
+    margin: 1rem auto;
+  }
+
+  img {
+    height: auto;
+    width: 100px;
+  }
+
+  .home-container {
+    width: 90%;
+    margin: 0 auto;
+
+    .carousel {
+      @include flexing(row, center, center);
+      width: 100%;
+      margin: 1rem auto;
+      height: 70vh;
+      border: 5px solid black;
+      box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.315);
+
+      .carousel-item {
+        @include flexing(column, center, center);
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+
+        &:hover {
+          .carousel-img {
+            height: 105%;
+            width: 105%;
+            object-fit: cover;
+          }
+
+          .carousel-content {
+            opacity: 1;
+          }
+        }
+
+        .carousel-content {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background: rgba(0, 0, 0, 0.418);
+          color: white;
+          opacity: 0;
+          transition: all 0.3s ease-in-out;
+          @include flexing(column, center, center);
+          // display: none;
+
+          .read-btn {
+            @include style;
+            transition: all 0.2s ease-in;
+
+            &:hover {
+              opacity: 0.85;
+            }
+          }
+        }
+
+        .carousel-img {
+          @include flexing(column, center, center);
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+
+          // &:hover {
+          //   height: 105%;
+          //   width: 105%;
+          //   object-fit: cover;
+          // }
+
+          // changing sibling state when carousel-img is hovered
+          // + is called adjacent sibling combinator
+          // &:hover + .carousel-content {
+          //   display: block;
+          // }
+        }
+      }
+    }
+
+    .post-cards {
+      margin: 1rem auto;
+      margin-top: 2rem;
+      @include flexing(row, center, center);
+      gap: 1rem;
+      flex-wrap: wrap;
+
+      .card {
+        margin: 1rem 0 0.5rem 0;
+        height: 400px;
+        width: 370px;
+        border-radius: 7px;
+        background: rgb(241, 241, 241);
+        overflow: hidden;
+        box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.178);
+        transition: all 0.3s ease-in-out;
+        border: 1px solid black;
+        cursor: pointer;
+
+        &:hover {
+          box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        &:hover .card-image img {
+          height: 102%;
+          width: 102%;
+          object-fit: cover;
+        }
+
+        .card-image {
+          height: 75%;
+          overflow: hidden;
+          @include flexing(column, center, center);
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease-in-out;
+          }
+        }
+
+        .card-content {
+          padding: 0.5rem;
+          padding-top: 0.8rem;
+          font-size: 0.8rem;
+
+          h3 {
+            text-align: center;
+            margin-bottom: 0.2rem;
+          }
+        }
+      }
+    }
+  }
+}

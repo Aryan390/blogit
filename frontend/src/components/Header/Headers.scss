@@ -1,0 +1,57 @@
+@import '../../assets/styles/variables.scss';
+
+.header {
+  width: 100%;
+  background-color: $violet-blue;
+  color: $grey-white;
+  font-size: 1.1em;
+  padding: 0.8rem;
+  // here the div right below header is blocking the box-shadow property, it is being rendered directly below the div next to header, so we need to add z-index with relative to header , I didn't know that we could use relative position this way, think later when you get time.
+  // https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context
+  // This value(position: relative) creates a new stacking context when the value of z-index is not auto. Its effect on table-*-group, table-row, table-column, table-cell, and table-caption elements is undefined.
+  position: relative;
+  z-index: 10;
+  // margin-bottom: 0rem;
+
+  -webkit-box-shadow: 0px 5px 25px 2px $violet-blue;
+  -moz-box-shadow: 0px 5px 25px 2px $violet-blue;
+  box-shadow: 0px 5px 25px 2px $violet-blue;
+
+  .colored {
+    color: $dark-cream;
+  }
+
+  .flex-header-container {
+    @include flexing(row, space-between, center);
+
+    h1 {
+      color: $grey-white;
+    }
+
+    .login-register-btns {
+      @include flexing(row, space-between, center);
+
+      .sign-btn {
+        text-decoration: none;
+        background-color: $china-rose;
+        color: $grey-white;
+        border: none;
+        border-radius: 10px;
+        font-size: 1rem;
+        padding: 0.5rem 0.8rem;
+        margin: 0 0.3rem;
+        cursor: pointer;
+        transition: all 0.2s ease-in;
+
+        &:hover {
+          background-color: $piggy-pink;
+          color: black;
+        }
+      }
+
+      .active-btn {
+        @include style(black, $dark-cream);
+      }
+    }
+  }
+}

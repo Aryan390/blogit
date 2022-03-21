@@ -1,25 +1,65 @@
-import logo from './logo.svg';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import ProtectedRoute from './utils/ProtectedRoute';
+import ScrollToTop from './utils/ScrollToTop';
+import Header from './components/Header/Header';
+import HomePage from './pages/HomePage/HomePage';
+import ProfilePage from './pages/ProfilePage/ProfilePage';
+import AllPostsPage from './pages/AllPostsPage/AllPostsPage';
+import AddPostPage from './pages/AddPostPage/AddPostPage';
+import PostPage from './pages/PostPage/PostPage';
+import LoginPage from './pages/LoginPage/LoginPage';
+import RegisterPage from './pages/RegisterPage/RegisterPage';
+import { AnimatePresence } from 'framer-motion';
 import './App.css';
 
-function App() {
+const App = () => {
+  const location = useLocation();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ScrollToTop />
+      <Header />
+      <AnimatePresence exitBeforeEnter>
+        <Routes location={location} key={location.pathname}>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/post/:postId' element={<PostPage />} />
+          <Route
+            path='/addpost'
+            element={
+              <ProtectedRoute redirectTo='/login'>
+                <AddPostPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path='/editpost/:postId'
+            element={
+              <ProtectedRoute redirectTo='/login'>
+                <AddPostPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path='/posts'
+            element={
+              <ProtectedRoute redirectTo='/login'>
+                <AllPostsPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path='/profile'
+            element={
+              <ProtectedRoute redirectTo='/login'>
+                <ProfilePage />
+              </ProtectedRoute>
+            }
+          />
+          <Route path='/login' element={<LoginPage />} />
+          <Route path='/register' element={<RegisterPage />} />
+        </Routes>
+      </AnimatePresence>
+    </>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,131 @@
+@import '../../assets/styles/variables.scss';
+
+.post-page {
+  background: $grey-white;
+  width: 100%;
+  // if you remove the below line of code, the page behaves differently , think tomorrow
+  @include flexing;
+
+  .postpage-container {
+    width: 85%;
+    margin: 0 auto;
+    // background: red;
+
+    .postpage-card {
+      padding: 1.5rem;
+      margin: 3rem 0;
+      width: 100%;
+      height: 100%;
+      background: rgb(233, 233, 233);
+      border-radius: 10px;
+      // box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+      //   rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+      //   rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      @include flexing(column, center center);
+
+      .post-info {
+        width: 70%;
+        margin: 1rem auto;
+        @include flexing(row, space-between, center);
+        padding: 1rem;
+        border-bottom: 1px solid black;
+        .user-photo {
+          svg {
+            height: 75px;
+            width: 75px;
+          }
+        }
+      }
+      .post-image {
+        width: 100%;
+        @include flexing;
+        margin: 1rem 0;
+
+        img {
+          height: 70%;
+          width: 70%;
+          box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+            rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+        }
+      }
+
+      .post-content {
+        width: 80%;
+        margin: 1rem auto;
+      }
+
+      .post-edit-delete {
+        width: 90%;
+        margin: 1rem 0 0.5rem 0;
+        @include flexing(row, flex-start, center);
+
+        button {
+          background: red;
+          @include flexing(row, space-between, center);
+          border: 1px solid $grey-white;
+
+          svg {
+            margin-right: 0.5rem;
+          }
+        }
+        .post-edit {
+          margin-right: 0.5rem;
+          background: $btn-blue;
+          color: $grey-white;
+        }
+
+        .post-delete {
+          margin-left: 0.5rem;
+          background: rgb(189, 55, 55);
+          color: $grey-white;
+        }
+      }
+
+      .numComments {
+        align-self: flex-start;
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid black;
+      }
+
+      .postpage-comments {
+        width: 95%;
+        padding: 0 1rem;
+        justify-self: flex-start;
+        margin: 1rem 0;
+        padding: 1rem;
+
+        .comment {
+          margin: 0.5rem 0;
+          background: rgb(255, 255, 255);
+          padding: 1rem;
+          border-radius: 10px;
+          @include flexing(row, flex-start, center);
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+          .comment-user-image {
+            margin-right: 1rem;
+
+            svg {
+              height: 50px;
+              width: 50px;
+            }
+          }
+
+          .comment-main {
+            .commment-info {
+              @include flexing(row, flex-start, center);
+              h3,
+              p {
+                display: inline-block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
